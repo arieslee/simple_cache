@@ -1,14 +1,87 @@
 # simple_cache
 
-Extension of shared_preferences
+A flutter plugin for cache, simple and extendible
 
-## Getting Started
+## Usage:
 
-This project is a starting point for a Dart
-[package](https://flutter.io/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+### Add dependency：
+Please check the latest version before installation.
+```
+dependencies:
+  flutter:
+    sdk: flutter
+  # add flutter_ScreenUtil
+  simple_cache: ^0.0.1
+```
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+### Add the following imports to your Dart code:
+```
+import 'package:simple_cache/simple_cache.dart';
+```
+
+### How to use
+
+```dart
+/// set cache
+void setExCache() async{
+     String cacheKey = 'simple.cache.key';
+     String value = 'simple cache value';
+     SimpleCache simpleCache = await SimpleCache.getInstance();
+     await simpleCache.setEx(cacheKey, value, expire:  expire);
+}
+
+/// get cache
+String getExCache(){
+    String cacheKey = 'simple.cache.key';
+    SimpleCache simpleCache = SimpleCache.getInstance();
+    return simpleCache.getEx(cacheKey);
+}
+
+/// set map
+void setMapCache() async{
+     String cacheKey = 'simple.map.cache.key';
+     Map value = {
+         'id': 1,
+         'name': 'simple cache',
+     };
+     SimpleCache simpleCache = await SimpleCache.getInstance();
+     await simpleCache.setMap(cacheKey, value);
+}
+
+/// get map
+Map getMapCache(){
+     String cacheKey = 'simple.map.cache.key';
+     SimpleCache simpleCache = SimpleCache.getInstance();
+     return simpleCache.getMap(cacheKey);
+}
+
+/// set list map
+void setListMapCache() async{
+     String cacheKey = 'simple.list.map.cache.key';
+     List<Map> value = [
+         {
+            'id': 1,
+            'name': 'simple cache',
+         }
+     ];
+     SimpleCache simpleCache = await SimpleCache.getInstance();
+     await simpleCache.setMap(cacheKey, value);
+}
+
+/// get list map
+List<Map> getListMapCache(){
+     String cacheKey = 'simple.list.map.cache.key';
+     SimpleCache simpleCache = SimpleCache.getInstance();
+     return simpleCache.setListMap(cacheKey);
+}
+```
+
+### example:
+
+[example demo](/example/lib/main.dart)
+ 
+effect:
+
+![效果1](screenshot/screenshot_1.png)
+
+![效果2](screenshot/screenshot_2.png)
