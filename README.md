@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   # add simple_cache
-  simple_cache: ^0.0.1
+  simple_cache: ^0.0.3
 ```
 
 ### Add the following imports to your Dart code:

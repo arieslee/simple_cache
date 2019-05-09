@@ -1,6 +1,6 @@
 name: simple_cache
 description: Extension of shared_preferences
-version: 0.0.2
+version: 0.0.3
 author: Sunmoon <i@liming.me>
 homepage: https://github.com/arieslee/simple_cache
 
