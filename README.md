@@ -10,7 +10,7 @@ Please check the latest version before installation.
 dependencies:
   flutter:
     sdk: flutter
-  # add flutter_ScreenUtil
+  # add simple_cache
   simple_cache: ^0.0.1
 ```
 
